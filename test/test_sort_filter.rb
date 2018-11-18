@@ -7,6 +7,6 @@ class TestSortFilter < MiniTest::Test
   end
 
   def test_sort
-    refute_nil @data_frame.table
+    refute_nil @data_frame.rows
   end
 end
