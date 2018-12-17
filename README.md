@@ -10,10 +10,20 @@ but... possible with Ruby code?
 
 Looks at the API
 
+
 ## R example
 
-### Basics & vectors
+### types & vectors
+
+- Everything is a vector
+- Basic types
+- Method based (vs object based)
+
 ### Data Frame from fixed data
+
+From: http://www.r-tutor.com/r-introduction/data-frame
+Then: https://gfc.ucdavis.edu/events/dar2018/_static/labs/lab2_introtoR_2_answers.R
+
 ### Static Data Frame (cars)
 ### Basics (rows/headers)
 ### Group
