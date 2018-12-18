@@ -24,14 +24,52 @@ Looks at the API
 From: http://www.r-tutor.com/r-introduction/data-frame
 Then: https://gfc.ucdavis.edu/events/dar2018/_static/labs/lab2_introtoR_2_answers.R
 
-### Static Data Frame (cars)
+```R
+speed = c(100,120,140)
+cylinders = c(4,6,6)
+names = c("Opel", "Toyota", "Fiat")
+df = data.frame(names,speed,cylinders)
+df
+df[1,2]
+df[2,"speed"]
+```
+
+### Static Data Frame (cars/mtcars)
+
+```R
+cars
+mtcars
+```
+
 ### Basics (rows/headers)
-### Group
-### Predict
+
+```R
+mtcars
+nrow(mtcars)
+ncol(mtcars)
+```
+
 ### Plot 
+
+```R
+plot(cars)
+plot(cars, main="Speed vs Distance")
+plot(extra ~ group, data=sleep)
+```
+
+```R
+install.packages("ggplot2")
+library(ggplot2)
+
+mpg #new data set
+```
 
 - basic on cars
 - ggplot on mtcars (+ install packages)
+
+### Group
+### Predict
+
 
 ## Summary
 
