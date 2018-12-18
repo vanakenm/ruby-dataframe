@@ -61,11 +61,12 @@ plot(extra ~ group, data=sleep)
 install.packages("ggplot2")
 library(ggplot2)
 
-mpg #new data set
-```
+ggplot(cars) + geom_point(mapping = aes(x = speed, y = dist))
 
-- basic on cars
-- ggplot on mtcars (+ install packages)
+mpg #new data set
+ggplot(mpg) + geom_point(mapping = aes(x = displ, y = hwy))
+ggplot(mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = class))
+```
 
 ### Group
 ### Predict
