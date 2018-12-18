@@ -1,19 +1,14 @@
-# Steps
+# R, Ruby and TDD
 
-## Raw
+Where this come from? 
 
-lab1 + lab2 + plot or predict or both
-What make special? Vectors + defaults data sets + Libs!
-Data frame example
-Compare with ruby code
-but... possible with Ruby code?
-
-Looks at the API
-
+- I heard about R several time and how good it was for Data analysis ("Data Science" - why the quotes?)
+- I was wondering what made it that good, and got some answers attending FOSS4G
+- This is in a way a summary + what it means for us as ruby developers
 
 ## R example
 
-### types & vectors
+### Types & vectors
 
 - Everything is a vector
 - Basic types
@@ -135,7 +130,12 @@ What's TDD?
 - initialize (with hash)
 - nrow
 - ncol
+- []
 - colnames
 - dim
 - to_s
 - col(:cyl)
+
+### References
+
+- R tutorial at [foss4g]( https://gfc.ucdavis.edu/events/dar2018/_static)
