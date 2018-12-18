@@ -47,6 +47,10 @@ mtcars
 mtcars
 nrow(mtcars)
 ncol(mtcars)
+dim(mtcars)
+colnames(mtcars)
+head(mtcars)
+mtcars$cyl
 ```
 
 ### Plot 
@@ -68,7 +72,32 @@ ggplot(mpg) + geom_point(mapping = aes(x = displ, y = hwy))
 ggplot(mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = class))
 ```
 
-### Group
+### Operations
+
+Filter
+```R
+cars[cars$speed == 10, ]
+speed10 = cars[cars$speed == 10, ]
+
+class(cars)
+class(speed10)
+
+cars
+```
+Is the filter modifying the object?
+
+Order
+
+```R
+per_dist = cars[order(cars$dist),]
+```
+
+Aggregate
+
+```R
+aggregate(mpg ~ cyl, mtcars, mean)
+```
+
 ### Predict
 
 
@@ -85,13 +114,28 @@ ggplot(mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = class))
 - This is clearly possible
 - This means creating a gem
 
+## Create a gem
+
+- Cool [guide](https://guides.rubygems.org/make-your-own-gem/)
+- I put a placeholder already
+
 ## TDD style
 
 What's TDD?
 
-### Steps
+"Red, Green, Refactor"
 
-- New empty data frame should have 0 rows -> Just the class
-- Create with hash should have X rows & columns
-- Create from CSV
-- Group? Check API
+- 1. Start always with a test
+- 2. Write the minimum amount of code to make it pass
+- 3. Go back to 1
+
+### Specs
+
+- initialize (empty)
+- initialize (with hash)
+- nrow
+- ncol
+- colnames
+- dim
+- to_s
+- col(:cyl)
