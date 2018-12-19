@@ -1,6 +1,6 @@
 # R, Ruby and TDD
 
-Where this come from? 
+Where this come from?
 
 - I heard about R several time and how good it was for Data analysis ("Data Science" - why the quotes?)
 - I was wondering what made it that good, and got some answers attending FOSS4G
@@ -27,6 +27,10 @@ df = data.frame(names,speed,cylinders)
 df
 df[1,2]
 df[2,"speed"]
+
+df[1]
+df[1,]
+
 ```
 
 ### Static Data Frame (cars/mtcars)
@@ -48,7 +52,35 @@ head(mtcars)
 mtcars$cyl
 ```
 
-### Plot 
+### Operations
+
+Filter
+
+```R
+cars[cars$speed == 10, ]
+speed10 = cars[cars$speed == 10, ]
+
+class(cars)
+class(speed10)
+
+cars
+```
+
+Is the filter modifying the object?
+
+Order
+
+```R
+per_dist = cars[order(cars$dist),]
+```
+
+Aggregate
+
+```R
+aggregate(mpg ~ cyl, mtcars, mean)
+```
+
+### Plot
 
 ```R
 plot(cars)
@@ -67,44 +99,21 @@ ggplot(mpg) + geom_point(mapping = aes(x = displ, y = hwy))
 ggplot(mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = class))
 ```
 
-### Operations
-
-Filter
-```R
-cars[cars$speed == 10, ]
-speed10 = cars[cars$speed == 10, ]
-
-class(cars)
-class(speed10)
-
-cars
-```
-Is the filter modifying the object?
-
-Order
-
-```R
-per_dist = cars[order(cars$dist),]
-```
-
-Aggregate
-
-```R
-aggregate(mpg ~ cyl, mtcars, mean)
-```
-
-### Predict
-
-
 ## Summary
 
 -> we have libs, a way to install them and a central server to host them.
 -> a REPL, but can also run scripts (obviously)
 -> even a web frameowrk
 
+## Languages
+
+- What make a language different from another?e
+- Why do we have so many?
+- Could we do the above in Ruby? Why? How?
+
 ## Ruby
 
-### I would love a data frame in Ruby
+### I would love to have a data frame in Ruby
 
 - This is clearly possible
 - This means creating a gem
@@ -121,10 +130,23 @@ What's TDD?
 "Red, Green, Refactor"
 
 - 1. Start always with a test
-- 2. Write the minimum amount of code to make it pass
-- 3. Go back to 1
+- 2. Run it (it fails)
+- 3. Write the minimum amount of code to make it pass
+- 4. Go back to 1
 
-### Specs
+### Framework
+
+Let's use MiniTest
+
+How does it work?
+
+- Set fixed data
+- Call code to test
+- Assert that the result fit a (fixed) expected value
+
+Stupidest example:
+
+### Tests
 
 - initialize (empty)
 - initialize (with hash)
@@ -132,10 +154,11 @@ What's TDD?
 - ncol
 - []
 - colnames
+- static one
 - dim
 - to_s
 - col(:cyl)
 
 ### References
 
-- R tutorial at [foss4g]( https://gfc.ucdavis.edu/events/dar2018/_static)
+- R tutorial at [foss4g](https://gfc.ucdavis.edu/events/dar2018/_static)
